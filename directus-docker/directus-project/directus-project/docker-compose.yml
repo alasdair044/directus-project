@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  directus:
+    image: directus/directus:latest
+    ports:
+      - 8055:8055
+    environment:
+      KEY: 'my_directus_key'
+      SECRET: 'my_super_secret'
+      ADMIN_EMAIL: admin@example.com
+      ADMIN_PASSWORD: admin123
+      DB_CLIENT: sqlite
+      DB_FILENAME: /directus/database/data.db
+    volumes:
+      - ./data:/directus/database

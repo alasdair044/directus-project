@@ -1,0 +1,12 @@
+services:
+  directus:
+    image: directus/directus:11.6.0
+    ports:
+      - "8055:8055"
+    environment:
+      ADMIN_EMAIL: admin@example.com
+      ADMIN_PASSWORD: admin123
+      DB_CLIENT: sqlite
+      DB_FILENAME: /data/data.db
+    volumes:
+      - ./data:/data
